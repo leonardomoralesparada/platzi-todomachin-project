@@ -7,9 +7,9 @@ import TodoItem from "./TodoItem";
 //import './App.css';
 
 const defaulTodos = [
-  {text:'cortar cebolla' ,completed: true},
+  {text:'cortar cebolla' ,completed: false},
   {text:'tomar el curso de intro a react', completed: false},
-  {text:'llorar con la llorona', completed: true},
+  {text:'llorar con la llorona', completed: false},
 ]
 
 
@@ -33,6 +33,22 @@ function App() {
     })
   }
 
+  const completeTodo =  (text) => {
+     const todoIndex = todos.findIndex(todo =>  todo.text === text);
+     const newTodos = [...todos];
+     newTodos[todoIndex].completed = true;
+     setTodos(newTodos);
+      
+  }
+
+  const deleteTodo =  (text) => {
+    const todoIndex = todos.findIndex(todo =>  todo.text === text);
+    const newTodos = [...todos];
+    newTodos.splice(todoIndex , 1)
+    setTodos(newTodos);
+     
+ }
+
   return (
 
   <Fragment>                   
@@ -54,6 +70,8 @@ function App() {
          key={todo.text} 
          text={todo.text}
          completed={todo.completed}
+         onComplete={() => completeTodo(todo.text)}
+         onDelete={() => deleteTodo(todo.text)}
          />
     ))}
     </TodoList>
