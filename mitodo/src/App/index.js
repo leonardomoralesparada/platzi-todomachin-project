@@ -1,10 +1,5 @@
-import React, { Fragment, useState } from "react";
-import TodoCounter from "./TodoCounter";
-import TodoSearch from "./TodoSearch";
-import CreateTodoButton from "./CreateTodoButton";
-import TodoList from "./TodoList";
-import TodoItem from "./TodoItem";
-//import './App.css';
+import React, {useState } from "react";
+import AppUI from "./AppUI";
 
 const defaulTodos = [
   {text:'cortar cebolla' ,completed: false},
@@ -51,34 +46,16 @@ function App() {
 
   return (
 
-  <Fragment>                   
-    <TodoCounter
-    total={totalTodos}
-    completed={completedTodos}
-
-    />
-
-    <TodoSearch
+    <AppUI
+    totalTodos={totalTodos}
+    completedTodos={completedTodos}
     searchValue={searchValue}
     setSearchValue={setSearchValue}
-    />
-    
+    searchTodos={searchTodos}
+    completeTodo={completeTodo}
+    deleteTodo={deleteTodo}
+    /> 
 
-    <TodoList>
-    {searchTodos.map(todo =>(
-        <TodoItem
-         key={todo.text} 
-         text={todo.text}
-         completed={todo.completed}
-         onComplete={() => completeTodo(todo.text)}
-         onDelete={() => deleteTodo(todo.text)}
-         />
-    ))}
-    </TodoList>
-
-    <CreateTodoButton/>
-  
-  </Fragment>   
   );
 }
 
