@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/mitodo/static/css/main.0dc5de89.css",
+    "main.js": "/mitodo/static/js/main.5cb17171.js",
+    "index.html": "/mitodo/index.html",
+    "main.0dc5de89.css.map": "/mitodo/static/css/main.0dc5de89.css.map",
+    "main.5cb17171.js.map": "/mitodo/static/js/main.5cb17171.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0dc5de89.css",
+    "static/js/main.5cb17171.js"
+  ]
+}
